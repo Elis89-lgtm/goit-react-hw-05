@@ -8,13 +8,15 @@ import {
   useParams,
 } from "react-router-dom";
 import { fetchMovieDetails } from "../../services/api";
+import MovieCast from "../../components/MovieCast/MovieCast";
+import MovieReviews from "../../components/MovieReviews/MovieReviews";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
-  const goBackRef = useRef(location.state ?? "/");
+  const goBackRef = useRef(location.state?.from || "/");
 
   useEffect(() => {
     const getData = async () => {
@@ -39,7 +41,7 @@ const MovieDetailsPage = () => {
       <h2>
         {title} ({year})
       </h2>
-      <button onClick={() => navigate("/home")}>Go back</button>
+      <button onClick={() => navigate("/")}>Go back</button>
       {posterPath && <img src={posterPath} alt={title} />}
       <p>
         <strong>User score:</strong>
