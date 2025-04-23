@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import Navigation from "./components/Navigation/Navigation";
+// import Navigation from "./components/Navigation/Navigation";
 import Header from "./components/Header/Header";
 
 import { lazy, Suspense } from "react";
@@ -21,13 +21,15 @@ const App = () => {
   return (
     <Suspense fallback={<h2>Loading...</h2>}>
       <Header />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
+
         <Route path="/movies" element={<MoviesPage />} />
 
         <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-          <Route path="cast" element={<h3>MovieCast</h3>} />
-          <Route path="reviews" element={<h3>MovieReviews</h3>} />
+          <Route path="cast" element={<MovieCast />} />
+          <Route path="reviews" element={<MovieReviews />} />
         </Route>
 
         <Route path="*" element={<NotFoundPage />} />

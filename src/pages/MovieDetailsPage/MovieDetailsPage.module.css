@@ -1,10 +1,40 @@
-.nav-link {
+.container {
+  padding: 20px;
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.poster {
+  width: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.details {
+  flex: 1;
+}
+
+.additional {
+  margin-top: 30px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.navLink {
   color: blueviolet;
   text-decoration: underline;
-  margin-right: 12px;
   font-size: 16px;
 }
 
-.nav-link.active {
+.active {
   font-weight: bold;
 }

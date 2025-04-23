@@ -30,7 +30,7 @@ const MovieCast = () => {
         {movieCast.length === 0 && <li>Information missing</li>}
         {movieCast.map((actor) => (
           <li key={actor.id}>
-            <img src={actor.profilePath} alt={actor.name} width="100" />
+            <img src={actor.profile_path} alt={actor.name} width="100" />
             <p>{actor.name}</p>
             <p>Character:{actor.character}</p>
           </li>

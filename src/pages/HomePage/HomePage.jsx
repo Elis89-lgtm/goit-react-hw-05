@@ -14,7 +14,7 @@ const HomePage = () => {
       .then(({ movies: trending }) => setMovies(trending))
       .catch((error) => {
         if (axios.isCancel(error) || error.name === "CanceledError") {
-          console.log("Кequest canceled");
+          console.log("Request canceled");
           return;
         }
         console.error(error);

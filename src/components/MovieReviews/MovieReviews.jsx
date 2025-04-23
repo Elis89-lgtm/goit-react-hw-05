@@ -29,7 +29,7 @@ const MovieReviews = () => {
     <div>
       <h3>Reviews</h3>
       {error && <p>{error}</p>}
-      {movieReviews.Length === 0 ? (
+      {movieReviews.length === 0 ? (
         <p>There are no reviews for this movie.</p>
       ) : (
         <ul>
