@@ -16,7 +16,7 @@ const MovieDetailsPage = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const navigate = useNavigate();
   const location = useLocation();
-  const goBackRef = useRef(location.state?.from || "/");
+  const goBackRef = useRef(location.state || "/");
 
   useEffect(() => {
     const getData = async () => {
@@ -37,11 +37,11 @@ const MovieDetailsPage = () => {
   const { title, posterPath, overview, genres, vote, year } = movieDetails;
   return (
     <div>
-      <Link to={goBackRef.current}>Go back</Link>
       <h2>
         {title} ({year})
       </h2>
-      <button onClick={() => navigate("/")}>Go back</button>
+      <button onClick={() => navigate(goBackRef.current)}>Go back</button>
+
       {posterPath && <img src={posterPath} alt={title} />}
       <p>
         <strong>User score:</strong>

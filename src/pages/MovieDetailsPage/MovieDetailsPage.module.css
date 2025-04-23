@@ -1,0 +1,10 @@
+.nav-link {
+  color: blueviolet;
+  text-decoration: underline;
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}

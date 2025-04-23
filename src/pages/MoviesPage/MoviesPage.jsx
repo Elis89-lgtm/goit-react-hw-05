@@ -39,7 +39,7 @@ const MoviesPage = () => {
     <div>
       <h2>Movies</h2>
       <SearchBar handleChangeQuery={handleChangeQuery} />
-      <MovieList data={moviesPage} />
+      <MovieList movies={moviesPage} />
     </div>
   );
 };
